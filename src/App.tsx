@@ -1,44 +1,39 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import data from './input/1.json'
-import { number } from 'prop-types';
-import { endianness } from 'os';
-
-
-/* OK */
-
+import initialData from './input/1.json'
 const App: React.FC = () => {
-  function foo(v: string) { return 'foo'; }
-  function hejsan(num: number) {
-    return Math.floor(num / 3) - 2;
-
-  }
-  let sum = 0;
-  data.map(num => {
-    let hej = hejsan(num);
-    sum+=hej;
-    while (hej > 0) {
-      hej = hejsan(hej)
-      if(hej > 0){
-        sum += hej;
-        console.log("num: ", num, "calc: ", hej, "sum: ", sum )
+  for (let i = 0; i < 100; i++) {
+    for (let j = 0; j < 100; j++) {
+      let data = [...initialData];
+      data[1] = i;
+      data[2] = j;
+      for (let index = 0; index < data.length; index++) {
+        let newInt = 0;
+        let keepGoing = true;
+        if (index % 4 === 0) {
+          switch (data[index]) {
+            case 1:
+              newInt = data[data[index + 1]] + data[data[index + 2]]
+              break;
+            case 2:
+              newInt = data[data[index + 1]] * data[data[index + 2]]
+              break;
+            case 99:
+              keepGoing = false;
+              break;
+          }
+          if (!keepGoing) {
+            break;
+          }
+          data[data[index + 3]] = newInt;
+          if (data[0] === 19690720) {
+            console.log('here i am', "i", i, "j", j);
+          }
+        }
       }
-      
     }
-  })
-  console.log('sum', sum);
-  // data.map(num => {
-  //   num = 1969;
-  //   let hej =1;
-  //   while(hej > 0){
-  //     let hej =hejsan(num);
-  //     sum+=hej;
-  //     console.log("num: ", num, "calc: ", hej, "sum: ", sum )
-  //   }
-  //   return;
-
-  // })
+  }
   return (
     <div className="App">
       <header className="App-header">
@@ -57,5 +52,4 @@ const App: React.FC = () => {
     </div>
   );
 }
-
 export default App;
