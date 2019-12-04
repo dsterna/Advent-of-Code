@@ -13,8 +13,6 @@ let second: string = "L999,D22,L292,U843,R390,U678,R688,D492,L489,U488,R305,U951
 // let second: string = "U62,R66,U55,R34,D71,R55,D58,R83";
 // let second: string = "U98,R91,D20,R16,D67,R40,U7,R15,U6,R7";
 
-
-
 interface ICord {
   x: number, y: number, steps: number
 };
@@ -63,12 +61,17 @@ const App: React.FC = () => {
     return tempArray;
   }
 
-  function compare(a:ICord, b:ICord) {
-    // Use toUpperCase() to ignore character casing
-    const bandA = a.x;
-    const bandB = b.x;
+  function compare(a: ICord, b: ICord) {
+
+    let bandA = a.x;
+    let bandB = b.x;
+
 
     let comparison = 0;
+    if (bandA === bandB) {
+      bandA = a.y
+      bandB = b.y;
+    }
     if (bandA > bandB) {
       comparison = 1;
     } else if (bandA < bandB) {
@@ -77,7 +80,7 @@ const App: React.FC = () => {
     return comparison;
   }
 
-  
+
 
 
   let firstWire: string[] = first.split(",")
@@ -115,38 +118,24 @@ const App: React.FC = () => {
   }
   )
 
-  console.log('hitArra1', hitArray1);
-  console.log('hitArra2', hitArray2);
 
   hitArray1.sort(compare)
   hitArray2.sort(compare)
 
-
-  console.log('hitArra1', hitArray1);
-  console.log('hitArra2', hitArray2);
-
+  // takes to long time
   // let intersection = _.intersectionWith(firstTrack, secondTrack, _.isEqual);
 
-  // let sums = newAry.map(elem => elem.split(" "))
+  let maxSteps = Number.MAX_SAFE_INTEGER;
 
+  hitArray1.forEach((elem, index) => {
+    if (elem.x + elem.y !== 0) {
+      let tempSum = elem.steps + hitArray2[index].steps;
+      if (tempSum < maxSteps)
+        maxSteps = tempSum;
+    }
+  })
 
-
-
-
-
-
-  // let sums3 = sums.map(elem => [Math.abs(parseInt(elem[0])), Math.abs(parseInt(elem[1])), Math.abs(parseInt(elem[2]))])
-  // console.log(sums3);
-
-  // sums3.forEach(elem => {
-  //   if (elem[0] + elem[1] !== 0)
-  //     if (elem[2] < lowestSum) {
-  //       lowestSum = elem[2];
-  //     }
-  // }
-  // )
-
-
+  console.log('maxSteps', maxSteps);
 
   return (
     <div className="App">
