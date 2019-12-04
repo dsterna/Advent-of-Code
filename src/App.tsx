@@ -19,19 +19,38 @@ import _ from 'lodash';
 |--------------------------------------------------
 */
 const App: React.FC = () => {
-
   const digitArray = (rangeNumber: number): number[] => {
     return ("" + rangeNumber).split("").map(function (t) { return parseInt(t) })
+  }
+  const countAdjacent = (ary: number[], position: number): boolean => {
+    let count = 0;
+    let digit = ary[position];
+    for (let index = position + 1; index < ary.length; index++) {
+      if (ary[index] === digit) {
+        count++;
+      }
+      else
+        break;
+    }
+    for (let index = position - 1; index >= 0; index--) {
+      if (ary[index] === digit) {
+        count++;
+      }
+      else
+        break;
+    }
+    if ((count + 1) === 2) {
+      return true;
+    }
+    return false;
   }
 
   const startInt: number = 137683;
   const endInt: number = 596253;
   let posiblePasswords: any[] = [];
-
-  for (let nextIndex = 137683; nextIndex < 596253; nextIndex++) {
+  for (let nextIndex = 137683; nextIndex < endInt; nextIndex++) {
     let foundAdjecent = false;
     let neverDecrease = true;
-    // let testInt = 567887;
     let testInt = nextIndex + 1;
     let ary: number[] = digitArray(testInt);
     ary.forEach((digit, index) => {
@@ -41,20 +60,19 @@ const App: React.FC = () => {
         neverDecrease = false;
         return
       }
-      if (ary[index + 1] == digit)
-        foundAdjecent = true;
+      if (ary[index + 1] == digit) {
+        if (countAdjacent(ary, index)) {
+          foundAdjecent = true;
+        };
+      }
     })
     if (foundAdjecent && neverDecrease) {
-
       posiblePasswords.push(testInt)
     }
-
   }
   console.log('array', posiblePasswords);
-
   return (
     <div className="App">
-
     </div>
   );
 };
