@@ -1,60 +1,95 @@
-import React from 'react';
-import './App.css';
+import * as React from 'react';
+import * as Highcharts from 'highcharts';
+import HighchartsReact from 'highcharts-react-official';
 import initialData from './input/1.json';
-/**
-|--------------------------------------------------
-- D directly orbits C and indirectly orbits B and COM, a total of 3 orbits.
-- L directly orbits K and indirectly orbits J, E, D, C, B, and COM, a total of 7 orbits.
-- COM orbits nothing.
+// The wrapper exports only a default component class that at the same time is a
+// namespace for the related Props interface (HighchartsReact.Props). All other
+// interfaces like Options come from the Highcharts module itself.
 
-|         G - H       J - K - L
-       /           /
-COM - B - C - D - E - F
-               \
-                I
-|--------------------------------------------------
+const options: any = {
+  chart: {
+    type: 'column'
+  },
+  title: {
+    text: 'Stacked column chart'
+  },
+  xAxis: {
+    type: 'category'
+  },
+  yAxis: {
+    min: 0,
+    title: {
+      text: 'Total fruit consumption'
+    },
+    stackLabels: {
+      enabled: true,
+      style: {
+        fontWeight: 'bold',
 
-B)  C       c->B +1 nya tar förälderns relationer  D->C+1 (+1)
-C)  D
-D)  E
-E)  F
-B)  G
-G)  H
-D)  I
-E)  J
-J)  K
-K)  L
+      }
+    }
+  },
+  legend: {
+    align: 'right',
+    x: -30,
+    verticalAlign: 'top',
+    y: 25,
+    floating: true,
 
-*/
-type orbit =  {
-  name: string
-  count: number
+    borderColor: '#CCC',
+    borderWidth: 1,
+    shadow: false
+  },
+  tooltip: {
+    headerFormat: '<b>{point.x}</b><br/>',
+    pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}'
+  },
+  plotOptions: {
+    column: {
+      stacking: 'normal',
+      dataLabels: {
+        enabled: false
+      }
+    }
+  },
+  series: initialData.histogramList.map(elem => {
+    return {
+      name: elem.date,
+      data: elem.partyCountList.map(vote => {
+        return [
+          "data" [vote.count]
+        ]
+        }
+      })
+
+    }
+  })  
+
 }
 
-export interface IArray extends Array<orbit> { }
 
-const App: React.FC = () => {
-  let data = [...initialData];
-  console.log('data', data);
-  let orbits:IArray = data.map(elem => {return {name: elem.split(')')[0], count: 0}});
-
-console.log(orbits);
-
-  data.forEach((elem, index) => {
-    let first = elem.split(')')[0];
-    let sec = elem.split(')')[1];
-    console.log('sec', sec);
-
-   console.log(
-     "hej", orbits.find(elem => (sec === elem.name )));
-
-  })
+  // series: [{
+  //   name: 'John',
+  //   data: [5, 3, 4, 7, 2]
+  // }, {
+  //   name: 'Jane',
+  //   data: [2, 2, 3, 2, 1]
+  // }, {
+  //   name: 'Joe',
+  //   data: [3, 4, 4, 2, 5]
+  // }]
 
 
+// React supports function components as a simple way to write components that
+// only contain a render method without any state (the App component in this
+// example).
 
-  return (
-    <div className="App">
-    </div>
-  );
-}
-export default App;
+const App = (props: HighchartsReact.Props) => <div>
+  <HighchartsReact
+    highcharts={Highcharts}
+    options={options}
+    {...props}
+  />
+</div>
+
+export default App; 

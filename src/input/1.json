@@ -1,12 +1,466 @@
-["COM)B",
-"B)C",
-"C)D",
-"D)E",
-"E)F",
-"B)G",
-"G)H",
-"D)I",
-"E)J",
-"J)K",
-"K)L"
-]
+{
+    "histogramList": [
+        {
+            "date": "1993-01-01 00:00:00",
+            "total": 2,
+            "partyCountList": [
+                {
+                    "party": "nyd",
+                    "count": 2
+                }
+            ]
+        },
+        {
+            "date": "1995-01-01 00:00:00",
+            "total": 3,
+            "partyCountList": [
+                {
+                    "party": "m",
+                    "count": 2
+                },
+                {
+                    "party": "fp",
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "date": "1996-01-01 00:00:00",
+            "total": 12,
+            "partyCountList": [
+                {
+                    "party": "fp",
+                    "count": 7
+                },
+                {
+                    "party": "mp",
+                    "count": 3
+                },
+                {
+                    "party": "m",
+                    "count": 1
+                },
+                {
+                    "party": "s",
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "date": "1997-01-01 00:00:00",
+            "total": 7,
+            "partyCountList": [
+                {
+                    "party": "m",
+                    "count": 3
+                },
+                {
+                    "party": "c",
+                    "count": 2
+                },
+                {
+                    "party": "fp",
+                    "count": 1
+                },
+                {
+                    "party": "v",
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "date": "1998-01-01 00:00:00",
+            "total": 6,
+            "partyCountList": [
+                {
+                    "party": "m",
+                    "count": 2
+                },
+                {
+                    "party": "mp",
+                    "count": 2
+                },
+                {
+                    "party": "kd",
+                    "count": 1
+                },
+                {
+                    "party": "v",
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "date": "1999-01-01 00:00:00",
+            "total": 19,
+            "partyCountList": [
+                {
+                    "party": "fp",
+                    "count": 4
+                },
+                {
+                    "party": "m",
+                    "count": 4
+                },
+                {
+                    "party": "c",
+                    "count": 3
+                },
+                {
+                    "party": "s",
+                    "count": 3
+                },
+                {
+                    "party": "v",
+                    "count": 3
+                },
+                {
+                    "party": "kd",
+                    "count": 1
+                },
+                {
+                    "party": "mp",
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "date": "2000-01-01 00:00:00",
+            "total": 8,
+            "partyCountList": [
+                {
+                    "party": "m",
+                    "count": 4
+                },
+                {
+                    "party": "c",
+                    "count": 2
+                },
+                {
+                    "party": "s",
+                    "count": 1
+                },
+                {
+                    "party": "v",
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "date": "2001-01-01 00:00:00",
+            "total": 5,
+            "partyCountList": [
+                {
+                    "party": "m",
+                    "count": 3
+                },
+                {
+                    "party": "c",
+                    "count": 1
+                },
+                {
+                    "party": "v",
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "date": "2002-01-01 00:00:00",
+            "total": 7,
+            "partyCountList": [
+                {
+                    "party": "mp",
+                    "count": 2
+                },
+                {
+                    "party": "v",
+                    "count": 2
+                },
+                {
+                    "party": "-",
+                    "count": 1
+                },
+                {
+                    "party": "fp",
+                    "count": 1
+                },
+                {
+                    "party": "m",
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "date": "2004-01-01 00:00:00",
+            "total": 5,
+            "partyCountList": [
+                {
+                    "party": "fp",
+                    "count": 4
+                },
+                {
+                    "party": "mp",
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "date": "2005-01-01 00:00:00",
+            "total": 4,
+            "partyCountList": [
+                {
+                    "party": "fp",
+                    "count": 2
+                },
+                {
+                    "party": "mp",
+                    "count": 1
+                },
+                {
+                    "party": "s",
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "date": "2006-01-01 00:00:00",
+            "total": 5,
+            "partyCountList": [
+                {
+                    "party": "mp",
+                    "count": 3
+                },
+                {
+                    "party": "c",
+                    "count": 1
+                },
+                {
+                    "party": "v",
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "date": "2009-01-01 00:00:00",
+            "total": 2,
+            "partyCountList": [
+                {
+                    "party": "fp",
+                    "count": 2
+                }
+            ]
+        },
+        {
+            "date": "2010-01-01 00:00:00",
+            "total": 1,
+            "partyCountList": [
+                {
+                    "party": "s",
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "date": "2011-01-01 00:00:00",
+            "total": 3,
+            "partyCountList": [
+                {
+                    "party": "fp",
+                    "count": 2
+                },
+                {
+                    "party": "s",
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "date": "2012-01-01 00:00:00",
+            "total": 4,
+            "partyCountList": [
+                {
+                    "party": "fp",
+                    "count": 2
+                },
+                {
+                    "party": "sd",
+                    "count": 2
+                }
+            ]
+        },
+        {
+            "date": "2013-01-01 00:00:00",
+            "total": 5,
+            "partyCountList": [
+                {
+                    "party": "v",
+                    "count": 3
+                },
+                {
+                    "party": "s",
+                    "count": 2
+                }
+            ]
+        },
+        {
+            "date": "2014-01-01 00:00:00",
+            "total": 23,
+            "partyCountList": [
+                {
+                    "party": "sd",
+                    "count": 8
+                },
+                {
+                    "party": "v",
+                    "count": 6
+                },
+                {
+                    "party": "fp",
+                    "count": 4
+                },
+                {
+                    "party": "m",
+                    "count": 2
+                },
+                {
+                    "party": "c",
+                    "count": 1
+                },
+                {
+                    "party": "mp",
+                    "count": 1
+                },
+                {
+                    "party": "s",
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "date": "2015-01-01 00:00:00",
+            "total": 5,
+            "partyCountList": [
+                {
+                    "party": "kd",
+                    "count": 2
+                },
+                {
+                    "party": "s",
+                    "count": 1
+                },
+                {
+                    "party": "sd",
+                    "count": 1
+                },
+                {
+                    "party": "v",
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "date": "2016-01-01 00:00:00",
+            "total": 5,
+            "partyCountList": [
+                {
+                    "party": "s",
+                    "count": 3
+                },
+                {
+                    "party": "l",
+                    "count": 1
+                },
+                {
+                    "party": "v",
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "date": "2017-01-01 00:00:00",
+            "total": 16,
+            "partyCountList": [
+                {
+                    "party": "s",
+                    "count": 6
+                },
+                {
+                    "party": "m",
+                    "count": 2
+                },
+                {
+                    "party": "mp",
+                    "count": 2
+                },
+                {
+                    "party": "v",
+                    "count": 2
+                },
+                {
+                    "party": "-",
+                    "count": 1
+                },
+                {
+                    "party": "c",
+                    "count": 1
+                },
+                {
+                    "party": "kd",
+                    "count": 1
+                },
+                {
+                    "party": "l",
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "date": "2018-01-01 00:00:00",
+            "total": 4,
+            "partyCountList": [
+                {
+                    "party": "s",
+                    "count": 2
+                },
+                {
+                    "party": "c",
+                    "count": 1
+                },
+                {
+                    "party": "v",
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "date": "2019-01-01 00:00:00",
+            "total": 10,
+            "partyCountList": [
+                {
+                    "party": "sd",
+                    "count": 3
+                },
+                {
+                    "party": "mp",
+                    "count": 2
+                },
+                {
+                    "party": "s",
+                    "count": 2
+                },
+                {
+                    "party": "kd",
+                    "count": 1
+                },
+                {
+                    "party": "l",
+                    "count": 1
+                },
+                {
+                    "party": "v",
+                    "count": 1
+                }
+            ]
+        }
+    ]
+}
